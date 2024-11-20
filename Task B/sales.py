@@ -20,4 +20,15 @@ The function will also update the inventory_records (For restocking) for a  give
 
     '''
 
-    return available_items
+    
+    
+    if current_day % 7 == 0:        #On restock days, the if statement passes and the function does nothing
+        if current_day == 0:
+            pass
+    else:
+        sold_units = (random.randint(0, 200))       #Simulates sales with random number 1 - 200
+        available_items -= sold_units       #Updates available items so that it takes into account the items sold
+        inventory_records.append([current_day, sold_units, 0, available_items])         #Updates inventory records
+
+
+    return available_items      #Returns the available items

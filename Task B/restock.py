@@ -24,6 +24,7 @@ The function will also update the inventory_records (For restocking) for a  give
         inventory_records.append([current_day, 0, restocked_units, available_items])
 
     elif current_day == 0:     #if current day = 0, function returns restocked units
+        available_items = 2000      #sets available items to the max of 2000
         restocked_units = available_items       #restocked_units is set to available_items
         inventory_records.append([current_day, 0, restocked_units, available_items])        #edits the inventory_records with restocked units
     
